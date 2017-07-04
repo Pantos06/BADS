@@ -1,0 +1,138 @@
+/* Styles go here */
+
+label {
+  font-style: italic;
+  font-weight: bold;
+  color:  #333;
+  text-align: center;
+}
+
+var {
+	font-style: italic;
+	font-weight: bold;
+}
+/*
+input {
+	width:50px;
+	margin:5px 0px 5px 0px;
+}*/
+
+sup{
+    vertical-align:super;
+    font-size:70%;
+}
+
+.tabInfo {
+  font-size: 90%;
+}
+.tabInfo data {
+  color: greenyellow;
+}
+.tabInfo th {
+  background: darkslategrey;
+  color: white;
+  font-weight: normal;
+}
+.tabInfo td {
+  background: darkslategrey;
+  color: white;
+}
+input[type=text], select {
+    /*padding: 12px 20px;*/
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	width:70px;
+	margin:5px 0px 5px 0px;
+}
+
+h2, h3 {
+  color:  #333;
+  text-decoration: cursive;
+  margin: 0px;
+  /*border: 1px solid black;*/
+}
+
+.range {
+	/*color: rgb(158, 222, 221);*/
+	border: 1px solid rgb(158, 222, 221);
+	padding:2px;
+}
+.bit_count {
+	/*color: rgb(158, 222, 221);*/
+}
+.line {
+		display: inline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.indices {
+	font: 10px arial, courier;
+	text-align: center;
+}
+.vector {
+    border:1px solid rgb(158, 222, 221);
+	padding: 2px;
+	cursor: hand;
+	text-align: center;
+}
+
+.vector:hover{
+	cursor: pointer;
+	cursor: hand;
+	color: white;
+	background: rgb(158, 222, 221);
+}
+
+button {
+    background-color: grey; /* Green */
+    border: none;
+    color: white;
+    padding: 11px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 4px;
+}
+
+svg {
+  border: 1px solid #999;
+  overflow: hidden;
+  margin:0px 20px 0px 20px;
+  text-align: center;
+}
+
+.node {
+  white-space: nowrap;
+}
+
+.node rect,
+.node circle,
+.node ellipse {
+  stroke: #333;
+  fill: #fff;
+  stroke-width: 1.5px;
+}
+
+.cluster rect {
+  stroke: #333;
+  fill: #000;
+  fill-opacity: 0.1;
+  stroke-width: 1.5px;
+}
+
+.edgePath path.path {
+  stroke: #333;
+  stroke-width: 1.5px;
+  fill: none;
+}
