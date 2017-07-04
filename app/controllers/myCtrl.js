@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['rangeTreeService', 'avlTreeService']);
+var app = angular.module('myCtrl', ['rangeTreeService', 'avlTreeService']);
 app.controller('myCtrl', function($scope, rangeTreeService, avlTreeService) {
 	
 	$scope.bitVectorsSize = 32;
@@ -37,6 +37,7 @@ app.controller('myCtrl', function($scope, rangeTreeService, avlTreeService) {
 	$scope.generateAndDraw = function(){
 		//$scope.drawBitVector();
 		//rangeTreeServiceDraw();
+		console.log("Passs!!!");
 	}
 
 	$scope.randomBitVector();

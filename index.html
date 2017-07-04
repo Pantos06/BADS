@@ -16,11 +16,25 @@
 <script src="app/services/AVLTree.js"></script>
 <script src="app/services/drawGraph.js"></script>
 <script src="app/services/utils.js"></script>
+<!--script src="app/directives/dataStructure.js"></script-->
+
 </head>
 
 <body ng-app="myApp">
 
 <div ng-controller="myCtrl">
+
+  <!--my-data-structure name="leafSize"></my-data-structure-->    
+  <my-data-structure 
+    title="'Range Tree'" 
+    input-n="inputN"  
+    input-b="inputB" 
+    generate-and-draw="generateAndDraw" 
+    flip="flip" 
+    bit-vectors-size="bitVectorsSize" 
+    leaf-size="leafSize" 
+    bit-vectors="bitVectors"></my-data-structure>
+  <!--
 <h2>Bit Vectors Demo: Range Tree</h2>
 
 <div class="form-group row" style="margin:10px">
@@ -35,7 +49,7 @@
     <input class="form-control" id="leaf_size" type="text" ng-model="leafSize" ng-keyup="inputB()">
   </div>
   <div class="col-xs-2 line">
-    <!--button type="button" ng-click="tryDraw()" style="margin-left:30px">Draw</button-->
+    <!--button type="button" ng-click="tryDraw()" style="margin-left:30px">Draw</button->
 	  <button type="button" ng-click="generateAndDraw()" style="margin-left:10px"><i class="fa fa-random"></i></button>
   </div>
   <div class="col-xs-2 line">
@@ -54,7 +68,7 @@
 		<tr ><td ng-repeat="bit in bitVectors track by $index" class="indices" >{{$index}}</td></tr>
 	</table>
 </div>
-
+-->
 <h3>Graph Visualization</h3>
 
 <svg width='95%' height=600>
