@@ -37,7 +37,7 @@ sup{
   background: darkslategrey;
   color: white;
 }
-input[type=text], select {
+.input-ds, select {
     /*padding: 12px 20px;*/
     padding: 10px 20px;
     margin: 8px 0;
@@ -47,6 +47,17 @@ input[type=text], select {
     box-sizing: border-box;
 	width:70px;
 	margin:5px 0px 5px 0px;
+}
+.input-op {
+	width:70px;
+	padding: 2px 2px;
+	text-align: center;
+}
+.label-op {
+	font-style: normal;
+  	font-weight: normal;
+  	color:  #333;
+  	text-align: center;
 }
 
 h2, h3 {
@@ -135,4 +146,23 @@ svg {
   stroke: #333;
   stroke-width: 1.5px;
   fill: none;
+}
+
+.styled select {
+   background: transparent;
+   width: 150px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px; 
+} 
+
+.styled{
+   margin: 50px;
+   width: 120px;
+   height: 34px;
+   border: 1px solid #111;
+   border-radius: 3px;
+   overflow: hidden;
+	display: inline;
+   /*background: url(http://www.stackoverflow.com/favicon.ico) 96% / 20% no-repeat #ddd;*/
 }

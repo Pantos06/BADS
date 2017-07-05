@@ -11,7 +11,10 @@ app.directive('myDataStructure', function(){
             flip: '=',
             bitVectorsSize: '=',
             leafSize: '=',
-            bitVectors: '='
+            bitVectors: '=',
+            operations: '=',
+			operationChange: '=',
+			perform: '='
         },
         //template: "<h1>{{title}}</h1>",
         templateUrl: 'data-structure.html',
