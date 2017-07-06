@@ -1,23 +1,25 @@
 var app = angular.module('myCtrl', ['rangeTreeService', 'avlTreeService']);
 app.controller('myCtrl', function($scope, rangeTreeService, avlTreeService) {
-	$scope.operations = [{op:'rank', param:1}, {op:'select', param:1}, {op:'access', param:1}, {op:'modify', param:2}];
+	$scope.operations = [{op:'access', param:1}, {op:'rank', param:1}, {op:'select', param:1}, {op:'modify', param:2}];
 	$scope.bitVectorsSize = 32;
 	$scope.leafSize = 4;
 	
 	$scope.perform = false;
 	
-	$scope.operationChange = function(){
-		$scope.perform = $scope.performOperation();
+	$scope.operationChange = function(item){
+		//console.log(item);
+		//if(item.op != null) {$scope.selectedOp = item.op;}
+		$scope.perform = $scope.performOperation(item);
 	}
-	$scope.performOperation = function(){
-		if($scope.selectedOp){		
-			if(($scope.selectedOp.param==2 && $scope.opIndex!=null && $scope.opValue!=null)
-				||($scope.selectedOp.param==1 && $scope.opIndex!=null)){
-				console.log(true);
+	$scope.performOperation = function(item){
+		if(item.op){	
+			if((item.op.param==2 && item.index!=null && item.val!=null)
+				||(item.op.param==1 && item.index!=null)){
+				//console.log(true);
 				return true;	
 			}
 		}
-				console.log(false);
+				//console.log(false);
 		return false;	
 	}
 	$scope.randomBitVector = function(){

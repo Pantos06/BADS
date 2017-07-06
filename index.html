@@ -26,7 +26,7 @@
 <div ng-controller="myCtrl">
 
   <my-data-structure 
-    title="'Range Tree'" 
+    title-of-tree="'Range Tree'" 
     input-n="inputN"  
     input-b="inputB" 
     generate-and-draw="generateAndDraw" 
@@ -34,9 +34,11 @@
     bit-vectors-size="bitVectorsSize" 
     leaf-size="leafSize" 
     bit-vectors="bitVectors"
-	operations="operations"
-	operation-change="operationChange"
-	perform="perform"></my-data-structure>
+	  operations="operations"
+	  operation-change="operationChange"
+	  perform="perform"
+    selected-op="selectedOp">
+  </my-data-structure>
 
 </div>
 
@@ -45,8 +47,6 @@
 <svg width='95%' height=600>
   <g/>
 </svg>
-
-
 
 </body>
 </html>

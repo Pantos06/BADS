@@ -1,46 +1,48 @@
 <div>
-<h2>Bit Vectors Demo: {{ title }}</h2>
+<h2>Bit Vectors Demo: {{ titleOfTree }}</h2>
 
-<div class="form-group row" style="margin:10px">
-  <div class="col-xs-2 "><h3 class="line">Input:</h3> <var>N</var> = 2<sup>x</sup> and <var>B</var> = 2<sup>y</sup> and <var>N</var> mod <var>B</var> = 0</div>
-  <div class="col-xs-2 line">
+<div class="" style="margin:10px">
+  <div class=" "><h3 class="line">Input:</h3> <var>N</var> = 2<sup>x</sup> and <var>B</var> = 2<sup>y</sup> and <var>N</var> mod <var>B</var> = 0</div>
+  <div class="line">
     <label for="bit_vector_size">N: </label>
     <input class="input-ds" id="bit_vector_size" type="text" ng-model="bitVectorsSize" ng-keyup="inputN()" style="margin-right:0px;" />
 	<label for="bit_vector_size" style="margin-right:20px;">Bits</label>
   </div>
-  <div class="col-xs-2 line">
+  <div class="line">
     <label for="leaf_size">B: </label> 
     <input class="input-ds" id="leaf_size" type="text" ng-model="leafSize" ng-keyup="inputB()" />
   </div>
-  <div class="col-xs-2 line">
+  <div class="line">
     <!--button type="button" ng-click="tryDraw()" style="margin-left:30px">Draw</button-->
 	  <button type="button" ng-click="generateAndDraw()" style="margin-left:10px"><i class="fa fa-random"></i></button>
   </div>
-  <div class="col-xs-2 line" style="border-left:1px solid black;margin:0 7.5px;">
+  <div class="line" style="border-left:1px solid black;margin:0 7.5px;">
   </div>
   
-  <div class="col-xs-2 line">
+  <div class="line">
     <label class="label-op" for="rank">Operation : </label> 
-	<select ng-model="selectedOp" ng-options="x.op for x in operations" class="input-op" ng-change="operationChange()"></select>
+	<select ng-model="selectedOp" ng-options="x.op for x in operations" class="input-op" ng-change="operationChange({'op':selectedOp, 'index':opIndex, val:opValue})"></select>
 	
 	<span ng-show="selectedOp.param > 0">	
 	<label class="label-op" for="rank">Parameter </label>
-	<select class="input-op" ng-model="opIndex" ng-change="operationChange()">
+	<select class="input-op" ng-model="opIndex" ng-change="operationChange({'op':selectedOp,'index':opIndex, 'val':9})">
 		<option ng-repeat="bit in bitVectors track by $index" value="{{$index}}">{{$index}}</option>
 	</select>
     </span>
 	<span ng-show="selectedOp.param > 1">
 		<label class="label-op" for="rank" >Parameter2 </label>
-	<select ng-model="opValue" ng-options="x for x in [0,1]" class="input-op" ng-change="operationChange()"></select>
+	<select ng-model="opValue" ng-options="x for x in [0,1]" class="input-op" ng-change="operationChange({'op':selectedOp,'index':opIndex, 'val':opValue})"></select>
     </span>
 	
-	<button type="button" ng-click="" style="margin-left:10px"  ng-show="perform">Perform {{selectedOp.op }}</button>
+	<button type="button" ng-click="" style="margin-left:10px"  ng-show="perform" >
+     {{selectedOp.op + "(" + opIndex}}{{ (opValue != undefined && selectedOp.param==2)? ', ' + opValue:''}})
+  </button>
  <!-- ng-show="(selectedOp.param==2 && opIndex!=null && opValue!=null) "-->
   </div>
 	
 </div>
 
-<div class="form-group row" style="margin:10px;">
+<div class="" style="margin:10px;">
 	<table >
 		<tr>
 			<td  ng-repeat="bit in bitVectors track by $index" ng-click="flip($index, bit)" data-toggle="tooltip" 

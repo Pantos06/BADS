@@ -14,7 +14,9 @@ app.directive('myDataStructure', function(){
             bitVectors: '=',
             operations: '=',
 			operationChange: '=',
-			perform: '='
+			perform: '=',
+            selectedOp: '=',
+            titleOfTree: '='
         },
         //template: "<h1>{{title}}</h1>",
         templateUrl: 'data-structure.html',
